@@ -300,8 +300,6 @@ function checkCertificateEligibility() {
 
     var if_live_class = '<?php echo $is_live_class; ?>';
 
-    console.log("jsdhj");
-
     $.ajax({
             url: '<?php echo site_url('addons/certificate/check_certificate_eligibility/'.$course_id);?>',
             success: function(response)

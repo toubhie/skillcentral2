@@ -101,6 +101,7 @@
     "sign_up": "Sign up",
     "cookie_policy": "Cookie policy",
     "accept": "Accept",
+    "session_expired": "Session Expired",
     "what_do_you_want_to_learn": "What do you want to learn",
     "online_courses": "Online courses",
     "explore_a_variety_of_fresh_topics": "Explore a variety of fresh topics",
@@ -183,6 +184,8 @@
     "includes": "Includes",
     "on_demand_videos": "On demand videos",
     "full_lifetime_access": "Full lifetime access",
+    "private_course": "Private Course",
+    "enter_password": "Enter Secured Password",
     "access_on_mobile_and_tv": "Access on mobile and tv",
     "course_preview": "Course preview",
     "please_wait": "Please wait",
@@ -515,5 +518,7 @@
     "lesson_provider": "Lesson provider",
     "for_mobile_application": "For mobile application",
     "only": "Only",
-    "type_video_is_acceptable_for_mobile_application": "Type video is acceptable for mobile application"
+    "type_video_is_acceptable_for_mobile_application": "Type video is acceptable for mobile application",
+    "no_data_found": "No data found",
+    "successfully_enrolled": "Successfully enrolled"
 }

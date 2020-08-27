@@ -238,6 +238,29 @@ class Home extends CI_Controller {
             }
         }
     }
+
+    public function handleCompareCoursePassword() {
+        if ($this->session->userdata('user_login') != 1) {
+            echo get_phrase('session_expired');
+        } else {
+            if (isset($_GET['password']) && isset($_GET['course_id'])) {
+                //$entered_password = sha1(html_escape($this->input->post('password')));
+                $entered_password = html_escape($this->input->get('password'));
+                $course_id = $this->input->get('course_id');
+
+                $course_password = $this->crud_model->get_course_password($course_id);
+
+                if(strcmp($entered_password, $course_password) == 0){
+                    echo "true";
+                } else{
+                    echo "false";
+                }
+            } else {
+                echo "false";
+            }
+        }
+    }
+    
     public function handleCartItems($return_number = "") {
         if (!$this->session->userdata('cart_items')) {
             $this->session->set_userdata('cart_items', array());

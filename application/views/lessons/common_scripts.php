@@ -45,7 +45,10 @@ $(document).ready(function() {
       document.querySelector('#player').currentTime = currentProgress;
     }
   }
+
+  
 });
+
 var counter = 0;
 player.on('canplay', event => {
   if (counter == 0) {

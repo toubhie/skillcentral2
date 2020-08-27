@@ -413,23 +413,30 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
               </button>
           </div>
 
-        <?php if ($course_details['is_free_course'] == 1): ?>
+        <?php if ($course_details['is_locked'] == 1): ?>
           <div class="buy-btns">
-            <?php if ($this->session->userdata('user_login') != 1): ?>
-              <a href = "#" class="btn btn-buy-now" onclick="handleEnrolledButton()"><?php echo site_phrase('get_enrolled'); ?></a>
-            <?php else: ?>
-              <a href = "<?php echo site_url('home/get_enrolled_to_free_course/'.$course_details['id']); ?>" class="btn btn-buy-now"><?php echo site_phrase('get_enrolled'); ?></a>
-            <?php endif; ?>
+            <a href="javascript::void(0)" class="btn btn-buy-now" onclick="showPasswordModal()"><?php echo get_phrase('get_enrolled'); ?></a>
+          
           </div>
         <?php else: ?>
-          <div class="buy-btns">
-            <a href = "javascript::" class="btn btn-buy-now" id = "course_<?php echo $course_details['id']; ?>" onclick="handleBuyNow(this)"><?php echo site_phrase('buy_now'); ?></a>
-            <?php if (in_array($course_details['id'], $this->session->userdata('cart_items'))): ?>
-              <button class="btn btn-add-cart addedToCart" type="button" id = "<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('added_to_cart'); ?></button>
-            <?php else: ?>
-              <button class="btn btn-add-cart" type="button" id = "<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('add_to_cart'); ?></button>
-            <?php endif; ?>
-          </div>
+          <?php if ($course_details['is_free_course'] == 1): ?>
+            <div class="buy-btns">
+              <?php if ($this->session->userdata('user_login') != 1): ?>
+                <a href = "#" class="btn btn-buy-now" onclick="handleEnrolledButton()"><?php echo site_phrase('get_enrolled'); ?></a>
+              <?php else: ?>
+                <a href = "<?php echo site_url('home/get_enrolled_to_free_course/'.$course_details['id']); ?>" class="btn btn-buy-now"><?php echo site_phrase('get_enrolled'); ?></a>
+              <?php endif; ?>
+            </div>
+          <?php else: ?>
+            <div class="buy-btns">
+              <a href = "javascript::" class="btn btn-buy-now" id = "course_<?php echo $course_details['id']; ?>" onclick="handleBuyNow(this)"><?php echo site_phrase('buy_now'); ?></a>
+              <?php if (in_array($course_details['id'], $this->session->userdata('cart_items'))): ?>
+                <button class="btn btn-add-cart addedToCart" type="button" id = "<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('added_to_cart'); ?></button>
+              <?php else: ?>
+                <button class="btn btn-add-cart" type="button" id = "<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('add_to_cart'); ?></button>
+              <?php endif; ?>
+            </div>
+          <?php endif; ?>
         <?php endif; ?>
       <?php endif; ?>
 
@@ -450,6 +457,10 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
           <?php } else { ?>
                   <li><i class="fas fa-award"></i><?php echo site_phrase('certificate_of_completion'); ?></li>
           <?php } ?>
+          <?php if ($course_details['is_locked'] == 1) { ?>
+                  <li><i class="fas fa-award"></i><?php echo site_phrase('private_course'); ?></li>
+          <?php } ?>
+                        
         </ul>
       </div>
     </div>
@@ -535,6 +546,32 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
     <?php endif; ?>
     <!-- Modal -->
 
+    <!-- Password modal -->
+    <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scrollableModalTitle">Enter Password to Enrol</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ml-2 mr-2">
+              <div class="form-group">
+                <label for="password"><?php echo get_phrase('password'); ?></label>
+                <input class="form-control" type="password" name="password" id="password" required>
+                <small class="text-muted"><?php echo get_phrase('enter_password'); ?></small>
+                <br>
+                <small style="color:red" id="password-error"></small>
+              </div>
+              <div class="text-right">
+                <button onclick="checkPassword()" class = "btn btn-success" type="submit" name="button"><?php echo get_phrase('submit'); ?></button>
+              </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.Password-dialog -->
+    </div>
+
     <style media="screen">
     .embed-responsive-16by9::before {
       padding-top : 0px;
@@ -568,6 +605,39 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
           });
         }
       });
+    }
+
+    function showPasswordModal()
+    {
+      jQuery('#password-modal').modal('show', {backdrop: 'true'});     
+    }
+
+    function checkPassword(){
+      var password = $('#password').val();
+      console.log('password: ' + password)
+
+      if(typeof password == 'undefined' || password == '' || password.length == 0){
+        jQuery('#password-error').html('Password cannot be empty');
+      } else{
+        $.ajax({
+          url: '<?php echo site_url('home/handleCompareCoursePassword');?>',
+          type : 'GET',
+          data : {password : password, course_id : <?php echo $course_details['id']; ?>},
+          success: function(response)
+          {
+            if(response == "<?php echo get_phrase('session_expired'); ?>"){
+              var ok = alert("Your session has expired and you need to login");
+              if(ok){
+                window.location.replace("<?php echo site_url('login'); ?>");
+              }
+            } else if(response == "true"){
+                window.location.replace("<?php echo site_url('home/get_enrolled_to_free_course/'.$course_details['id']); ?>?>");
+            } else{
+              jQuery('#password-error').html('Password Incorrect');
+            }            
+          }
+        });
+      }     
     }
 
     function handleBuyNow(elem) {

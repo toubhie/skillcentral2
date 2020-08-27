@@ -30,6 +30,12 @@ class Crud_model extends CI_Model
         return $this->db->get_where('category', array('id' => $id));
     }
 
+    public function get_course_password($course_id)
+    {
+        $course_details = $this->get_course_by_id($course_id)->row_array();
+        return $course_details['password'];
+    }
+
     public function get_category_id($slug = "")
     {
         $category_details = $this->db->get_where('category', array('slug' => $slug))->row_array();

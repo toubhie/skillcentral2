@@ -22,7 +22,26 @@
                 </div>
 
                 <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
+                <script>
+                    const player = new Plyr('#player', {
+                        controls: [
+                            'play-large', // The large play button in the center
+                            'play', // Play/pause playback
+                            //'fast-forward', // Fast forward by the seek time (default 10 seconds)
+                            //'progress', // The progress bar and scrubber for playback and buffering
+                            'current-time', // The current time of playback
+                            'duration', // The full duration of the media
+                            'mute', // Toggle mute
+                            'volume', // Volume control
+                            'captions', // Toggle captions
+                            //'settings', // Settings menu
+                            'pip', // Picture-in-picture (currently Safari only)
+                            'airplay', // Airplay (currently Safari only)
+                            //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+                            'fullscreen', // Toggle fullscreen
+                        ]
+                    });
+                </script>
                 <!------------- PLYR.IO ------------>
 
                 <!-- If the video is vimeo video -->
@@ -36,7 +55,26 @@
                 </div>
 
                 <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
+                <script>
+                    const player = new Plyr('#player', {
+                        controls: [
+                            'play-large', // The large play button in the center
+                            'play', // Play/pause playback
+                            //'fast-forward', // Fast forward by the seek time (default 10 seconds)
+                            //'progress', // The progress bar and scrubber for playback and buffering
+                            'current-time', // The current time of playback
+                            'duration', // The full duration of the media
+                            'mute', // Toggle mute
+                            'volume', // Volume control
+                            'captions', // Toggle captions
+                            //'settings', // Settings menu
+                            'pip', // Picture-in-picture (currently Safari only)
+                            'airplay', // Airplay (currently Safari only)
+                            //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+                            'fullscreen', // Toggle fullscreen
+                        ]
+                    });
+                </script>
                 <!------------- PLYR.IO ------------>
 
                 <!-- If the video is Amazon S3 video -->
@@ -54,7 +92,26 @@
                 </video>
 
                 <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
+                <script>
+                    const player = new Plyr('#player', {
+                        controls: [
+                            'play-large', // The large play button in the center
+                            'play', // Play/pause playback
+                            //'fast-forward', // Fast forward by the seek time (default 10 seconds)
+                            //'progress', // The progress bar and scrubber for playback and buffering
+                            'current-time', // The current time of playback
+                            'duration', // The full duration of the media
+                            'mute', // Toggle mute
+                            'volume', // Volume control
+                            'captions', // Toggle captions
+                            //'settings', // Settings menu
+                            'pip', // Picture-in-picture (currently Safari only)
+                            'airplay', // Airplay (currently Safari only)
+                            //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+                            'fullscreen', // Toggle fullscreen
+                        ]
+                    });
+                </script>
                 <!------------- PLYR.IO ------------>
                 <!-- If the video is Amazon S3 video -->
 
@@ -73,7 +130,26 @@
                 </video>
 
                 <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
+                <script>
+                    const player = new Plyr('#player', {
+                        controls: [
+                            'play-large', // The large play button in the center
+                            'play', // Play/pause playback
+                            //'fast-forward', // Fast forward by the seek time (default 10 seconds)
+                            //'progress', // The progress bar and scrubber for playback and buffering
+                            'current-time', // The current time of playback
+                            'duration', // The full duration of the media
+                            'mute', // Toggle mute
+                            'volume', // Volume control
+                            'captions', // Toggle captions
+                            //'settings', // Settings menu
+                            'pip', // Picture-in-picture (currently Safari only)
+                            'airplay', // Airplay (currently Safari only)
+                            //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+                            'fullscreen', // Toggle fullscreen
+                        ]
+                    });
+                </script>
                 <!------------- PLYR.IO ------------>
                 <!-- If the video is self uploaded video -->
 
@@ -91,7 +167,26 @@
                     </video>
 
                     <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                    <script>const player = new Plyr('#player');</script>
+                    <script>
+                    const player = new Plyr('#player', {
+                        controls: [
+                            'play-large', // The large play button in the center
+                            'play', // Play/pause playback
+                            //'fast-forward', // Fast forward by the seek time (default 10 seconds)
+                            //'progress', // The progress bar and scrubber for playback and buffering
+                            'current-time', // The current time of playback
+                            'duration', // The full duration of the media
+                            'mute', // Toggle mute
+                            'volume', // Volume control
+                            'captions', // Toggle captions
+                            //'settings', // Settings menu
+                            'pip', // Picture-in-picture (currently Safari only)
+                            'airplay', // Airplay (currently Safari only)
+                            //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+                            'fullscreen', // Toggle fullscreen
+                        ]
+                    });
+                </script>
                     <!------------- PLYR.IO ------------>
                 <?php endif; ?>
             <?php elseif ($lesson_details['lesson_type'] == 'quiz'): ?>

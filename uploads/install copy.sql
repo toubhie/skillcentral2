@@ -133,6 +133,8 @@ CREATE TABLE `course` (
   `certificate_price` double DEFAULT NULL,
   `is_free_certificate` int(11) DEFAULT NULL,
   `when_to_pay_for_certificate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_locked` int(11) DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
