@@ -269,3 +269,16 @@ body.show {
   text-align: center;
   padding-top: 100px;
 }
+
+
+
+/* Revamping styles */
+
+.ab-course-tab {
+
+}
+
+#ab-course-tab-item {
+  flex-basis: 140px;
+  flex-grow: 0;
+}

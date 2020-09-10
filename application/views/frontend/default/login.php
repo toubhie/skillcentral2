@@ -23,28 +23,33 @@
 <section class="category-course-list-area">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-9">
-              <div class="user-dashboard-box mt-3">
-                  <div class="user-dashboard-content w-100 login-form">
+            <!-- <div class="col-lg-9"> -->
+            <div class="col-lg-5"> <!-- New -->
+              <div class="user-dashboard-box mt-3 ab-form-container">
+
+
+
+                  <div class="user-dashboard-content w-100 login-form ab-form">
                       <div class="content-title-box">
+                          <img src="http://localhost/skillcentral2/uploads/system/user-ic.png" alt="User logo" class="ab-user-icon"> <!-- New -->
                           <div class="title"><?php echo site_phrase('login'); ?></div>
                           <div class="subtitle"><?php echo site_phrase('provide_your_valid_login_credentials'); ?>.</div>
                       </div>
                       <form action="<?php echo site_url('login/validate_login/user'); ?>" method="post">
                           <div class="content-box">
                               <div class="basic-group">
-                                  <div class="form-group">
-                                      <label for="login-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
-                                      <input type="email" class="form-control" name = "email" id="login-email" placeholder="<?php echo site_phrase('email'); ?>" value="" required>
+                                  <div class="form-group" id="ab-form-group">
+                                      <label for="login-email" id="ab-form-label"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
+                                      <input type="email" class="form-control" id="ab-form-control" name = "email" id="login-email" placeholder="<?php echo site_phrase('email'); ?>" value="" required>
                                   </div>
-                                  <div class="form-group">
-                                      <label for="login-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span> <?php echo site_phrase('password'); ?>:</label>
-                                      <input type="password" class="form-control" name = "password" placeholder="<?php echo site_phrase('password'); ?>" value="" required>
+                                  <div class="form-group" id="ab-form-group">
+                                      <label for="login-password" id="ab-form-label"><span class="input-field-icon"><i class="fas fa-lock"></i></span> <?php echo site_phrase('password'); ?>:</label>
+                                      <input type="password" class="form-control" id="ab-form-control" name = "password" placeholder="<?php echo site_phrase('password'); ?>" value="" required>
                                   </div>
                               </div>
                           </div>
                           <div class="content-update-box">
-                              <button type="submit" class="btn"><?php echo site_phrase('login'); ?></button>
+                              <button type="submit" class="btn ab-btn-full-width"><?php echo site_phrase('login'); ?></button>
                           </div>
                           <div class="forgot-pass text-center">
                               <span><?php echo site_phrase('or'); ?></span>
@@ -55,34 +60,37 @@
                           </div>
                       </form>
                   </div>
-                  <div class="user-dashboard-content w-100 register-form hidden">
+
+
+                  <div class="user-dashboard-content w-100 register-form hidden ab-form">
                       <div class="content-title-box">
+                          <img src="http://localhost/skillcentral2/uploads/system/user-ic.png" alt="User logo" class="ab-user-icon"> <!-- New -->
                           <div class="title"><?php echo site_phrase('registration_form'); ?></div>
                           <div class="subtitle"><?php echo site_phrase('sign_up_and_start_learning'); ?>.</div>
                       </div>
                       <form action="<?php echo site_url('login/register'); ?>" method="post">
                           <div class="content-box">
                               <div class="basic-group">
-                                  <div class="form-group">
-                                      <label for="first_name"><span class="input-field-icon"><i class="fas fa-user"></i></span> <?php echo site_phrase('first_name'); ?>:</label>
-                                      <input type="text" class="form-control" name = "first_name" id="first_name" placeholder="<?php echo site_phrase('first_name'); ?>" value="" required>
+                                  <div class="form-group" id="ab-form-group">
+                                      <label for="first_name" id="ab-form-label"><span class="input-field-icon"><i class="fas fa-user"></i></span> <?php echo site_phrase('first_name'); ?>:</label>
+                                      <input type="text" class="form-control" id="ab-form-control" name = "first_name" id="first_name" placeholder="<?php echo site_phrase('first_name'); ?>" value="" required>
                                   </div>
-                                  <div class="form-group">
-                                      <label for="last_name"><span class="input-field-icon"><i class="fas fa-user"></i></span> <?php echo site_phrase('last_name'); ?>:</label>
-                                      <input type="text" class="form-control" name = "last_name" id="last_name" placeholder="<?php echo site_phrase('last_name'); ?>" value="" required>
+                                  <div class="form-group" id="ab-form-group">
+                                      <label for="last_name" id="ab-form-label"><span class="input-field-icon"><i class="fas fa-user"></i></span> <?php echo site_phrase('last_name'); ?>:</label>
+                                      <input type="text" class="form-control" id="ab-form-control" name = "last_name" id="last_name" placeholder="<?php echo site_phrase('last_name'); ?>" value="" required>
                                   </div>
-                                  <div class="form-group">
-                                      <label for="registration-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
-                                      <input type="email" class="form-control" name = "email" id="registration-email" placeholder="<?php echo site_phrase('email'); ?>" value="" required>
+                                  <div class="form-group" id="ab-form-group">
+                                      <label for="registration-email" id="ab-form-label"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
+                                      <input type="email" class="form-control" id="ab-form-control" name = "email" id="registration-email" placeholder="<?php echo site_phrase('email'); ?>" value="" required>
                                   </div>
-                                  <div class="form-group">
-                                      <label for="registration-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span> <?php echo site_phrase('password'); ?>:</label>
-                                      <input type="password" class="form-control" name = "password" id="registration-password" placeholder="<?php echo site_phrase('password'); ?>" value="" required>
+                                  <div class="form-group" id="ab-form-group">
+                                      <label for="registration-password" id="ab-form-label"><span class="input-field-icon"><i class="fas fa-lock"></i></span> <?php echo site_phrase('password'); ?>:</label>
+                                      <input type="password" class="form-control" id="ab-form-control" name = "password" id="registration-password" placeholder="<?php echo site_phrase('password'); ?>" value="" required>
                                   </div>
                               </div>
                           </div>
                           <div class="content-update-box">
-                              <button type="submit" class="btn"><?php echo site_phrase('sign_up'); ?></button>
+                              <button type="submit" class="btn ab-btn-full-width"><?php echo site_phrase('sign_up'); ?></button>
                           </div>
                           <div class="account-have text-center">
                               <?php echo site_phrase('already_have_an_account'); ?>? <a href="javascript::" onclick="toggoleForm('login')"><?php echo site_phrase('login'); ?></a>
@@ -90,7 +98,7 @@
                       </form>
                   </div>
 
-                  <div class="user-dashboard-content w-100 forgot-password-form hidden">
+                  <div class="user-dashboard-content w-100 forgot-password-form hidden ab-form">
                       <div class="content-title-box">
                           <div class="title"><?php echo site_phrase('forgot_password'); ?></div>
                           <div class="subtitle"><?php echo site_phrase('provide_your_email_address_to_get_password'); ?>.</div>
@@ -98,15 +106,15 @@
                       <form action="<?php echo site_url('login/forgot_password/frontend'); ?>" method="post">
                           <div class="content-box">
                               <div class="basic-group">
-                                  <div class="form-group">
-                                      <label for="forgot-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
-                                      <input type="email" class="form-control" name = "email" id="forgot-email" placeholder="<?php echo site_phrase('email'); ?>" value="" required>
+                                  <div class="form-group" id="ab-form-group">
+                                      <label for="forgot-email" id="ab-form-label"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
+                                      <input type="email" class="form-control" id="ab-form-control" name = "email" id="forgot-email" placeholder="<?php echo site_phrase('email'); ?>" value="" required>
                                       <small class="form-text text-muted"><?php echo site_phrase('provide_your_email_address_to_get_password'); ?>.</small>
                                   </div>
                               </div>
                           </div>
                           <div class="content-update-box">
-                              <button type="submit" class="btn"><?php echo site_phrase('reset_password'); ?></button>
+                              <button type="submit" class="btn ab-btn-full-width"><?php echo site_phrase('reset_password'); ?></button>
                           </div>
                           <div class="forgot-pass text-center">
                               <?php echo site_phrase('want_to_go_back'); ?>? <a href="javascript::" onclick="toggoleForm('login')"><?php echo site_phrase('login'); ?></a>
