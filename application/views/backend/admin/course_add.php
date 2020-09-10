@@ -77,18 +77,21 @@
                                                         <input type="text" class="form-control" id="course_title" name = "title" placeholder="<?php echo get_phrase('enter_course_title'); ?>" required>
                                                     </div>
                                                 </div>
+                                               
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
                                                     <div class="col-md-10">
                                                         <textarea name="short_description" id = "short_description" class="form-control"></textarea>
                                                     </div>
                                                 </div>
+                                               
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
                                                     <div class="col-md-10">
                                                         <textarea name="description" id = "description" class="form-control"></textarea>
                                                     </div>
                                                 </div>
+                                               
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
                                                     <div class="col-md-10">
@@ -106,6 +109,7 @@
                                                     <small class="text-muted"><?php echo get_phrase('select_sub_category'); ?></small>
                                                 </div>
                                             </div>
+                                           
                                             <div class="form-group row mb-3">
                                                 <label class="col-md-2 col-form-label" for="level"><?php echo get_phrase('level'); ?></label>
                                                 <div class="col-md-10">
@@ -116,6 +120,7 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                          
                                             <div class="form-group row mb-3">
                                                 <label class="col-md-2 col-form-label" for="language_made_in"><?php echo get_phrase('language_made_in'); ?></label>
                                                 <div class="col-md-10">
@@ -126,6 +131,7 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                          
                                             <div class="form-group row mb-3">
                                                 <div class="offset-md-2 col-md-10">
                                                     <div class="custom-control custom-checkbox">
@@ -133,6 +139,35 @@
                                                         <label class="custom-control-label" for="is_top_course"><?php echo get_phrase('check_if_this_course_is_top_course'); ?></label>
                                                     </div>
                                                 </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="form-group row mb-3">
+                                                <label class="col-md-2 col-form-label" for="is_private_course"><?php echo get_phrase('course_security'); ?></label>
+                                                <div class="offset-md-2 col-md-10">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" name="is_private_course" id="is_private_course" value="1" onclick="toggleCoursePasswordFields(this.id)">
+                                                        <label class="custom-control-label" for="is_private_course"><?php echo get_phrase('check_if_private_course'); ?></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="course-password-stuffs">
+                                                <div class="form-group row mb-3">
+                                                    <label class="col-md-2 col-form-label" for="course_password"><?php echo get_phrase('course_password'); ?></label>
+                                                    <div class="col-md-10">
+                                                        <input type="password" class="form-control" id="course_password" name ="course_password" placeholder="<?php echo get_phrase('enter_course_password'); ?>">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row mb-3">
+                                                    <label class="col-md-2 col-form-label" for="retype_course_password"><?php echo get_phrase('retype_course_password'); ?></label>
+                                                    <div class="col-md-10">
+                                                        <input type="password" class="form-control" id="retype_course_password" name ="retype_course_password" placeholder="<?php echo get_phrase('retype_course_password'); ?>">
+                                                    </div>
+                                                </div>
+                                                
                                             </div>
                                         </div> <!-- end col -->
                                     </div> <!-- end row -->
