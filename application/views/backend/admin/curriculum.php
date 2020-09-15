@@ -18,7 +18,7 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
             $quiz_counter   = 0;
             foreach ($sections as $key => $section):?>
             <div class="col-xl-12">
-                <div class="card bg-light text-seconday on-hover-action mb-5" id = "section-<?php echo $section['id']; ?>">
+                <div class="card bg-light text-seconday on-hover-action" id = "section-<?php echo $section['id']; ?>">
                     <div class="card-body">
                         <h5 class="card-title" class="mb-3" style="min-height: 45px;"><span class="font-weight-light"><?php echo get_phrase('section').' '.++$key; ?></span>: <?php echo $section['title']; ?>
                             <div class="row justify-content-center alignToTitle float-right display-none" id = "widgets-of-section-<?php echo $section['id']; ?>">

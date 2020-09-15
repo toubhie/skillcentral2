@@ -1,7 +1,8 @@
-<section class="home-banner-area">
+<section class="home-banner-area" >
     <div class="container-lg">
         <div class="row">
-            <div class="col">
+            <!-- <div class="col"> -->
+            <div class="mx-auto ab-header-card" > <!-- new -->
                 <div class="home-banner-wrap">
                     <h2><?php echo get_frontend_settings('banner_title'); ?></h2>
                     <p><?php echo get_frontend_settings('banner_sub_title'); ?></p>
@@ -249,6 +250,29 @@
 </div>
 </div>
 </section>
+
+<section>
+  <div class="container-lg">
+    <div class="row">
+      <!-- <div class="container"> -->
+        <div class="ab-ads">
+
+          <div class="">
+            <h5>Teach the world online</h5>
+            <p>Create an online video course, reach students across the globe, and earn money
+            </p>
+          </div>
+          <div class="">
+            <button class="btn ab-btn-white">Get started</button>
+          </div>
+
+        </div>
+      <!-- </div> -->
+
+    </div>
+  </div>
+</section>
+
 
 <script type="text/javascript">
 function handleWishList(elem) {
