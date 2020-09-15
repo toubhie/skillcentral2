@@ -104,18 +104,21 @@
                                                         <input type="text" class="form-control" id="course_title" name = "title" placeholder="<?php echo get_phrase('enter_course_title'); ?>" value="<?php echo $course_details['title']; ?>" required>
                                                     </div>
                                                 </div>
+                                               
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
                                                     <div class="col-md-10">
                                                         <textarea name="short_description" id = "short_description" class="form-control"><?php echo $course_details['short_description']; ?></textarea>
                                                     </div>
                                                 </div>
+                                               
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
                                                     <div class="col-md-10">
                                                         <textarea name="description" id = "description" class="form-control"><?php echo $course_details['description']; ?></textarea>
                                                     </div>
                                                 </div>
+                                               
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
                                                     <div class="col-md-10">
@@ -133,6 +136,7 @@
                                                     <small class="text-muted"><?php echo get_phrase('select_sub_category'); ?></small>
                                                 </div>
                                             </div>
+                                            
                                             <div class="form-group row mb-3">
                                                 <label class="col-md-2 col-form-label" for="level"><?php echo get_phrase('level'); ?></label>
                                                 <div class="col-md-10">
@@ -161,6 +165,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div> <!-- end tab pane -->

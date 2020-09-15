@@ -458,7 +458,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                   <li><i class="fas fa-award"></i><?php echo site_phrase('certificate_of_completion'); ?></li>
           <?php } ?>
           <?php if ($course_details['is_locked'] == 1) { ?>
-                  <li><i class="fas fa-award"></i><?php echo site_phrase('private_course'); ?></li>
+                  <li><i class="fas fa-lock"></i><?php echo site_phrase('private_course'); ?></li>
           <?php } ?>
                         
         </ul>
