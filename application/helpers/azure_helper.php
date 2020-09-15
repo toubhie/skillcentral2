@@ -10,15 +10,15 @@ use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
 function get_container_name(){
-    return "skillcentral";
+    return getenv('StorageContainerName');
 }
 
 function get_azure_account_name(){
-    return "cilappstorageaccount";
+    return getenv('StorageAccountName');
 }
 
 function get_azure_account_key(){
-    return "icejvXX2h8y2skvKZ+bF1D9SW5ZJR2cX+e6UO6URXfb05RH8gkwMSjYn+WpNNFkOejqOEhMf3nV0z1gqbUnNFQ==";
+    return getenv('StorageAccountKey');
 }
 
 function get_blob_client()
